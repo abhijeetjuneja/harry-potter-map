@@ -3,7 +3,6 @@ var express = require('express');
 var app         = express();
 var http = require('http').Server(app);
 mongoose.Promise = require('bluebird');
-var eventEmitter = new events.EventEmitter();
 var mapRouter  = express.Router();
 var mapModel = mongoose.model('mapPoint');
 var responseGenerator = require('./../../libs/responseGenerator');
