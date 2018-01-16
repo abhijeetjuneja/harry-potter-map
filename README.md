@@ -2,7 +2,7 @@
 Hp World is an interactive map based tool to explore the wizarding world on a Map-box map.
 
 ## Application URL
-https://pacific-brook-33516.herokuapp.com
+https://harry-potter-map.herokuapp.com/
 
 ## Features
 
