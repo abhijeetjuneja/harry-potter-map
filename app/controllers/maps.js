@@ -2,15 +2,10 @@ var mongoose = require('mongoose');
 var express = require('express');
 var app         = express();
 var http = require('http').Server(app);
-var io = require('socket.io')(http);
 mongoose.Promise = require('bluebird');
-var events = require('events');
 var eventEmitter = new events.EventEmitter();
 var mapRouter  = express.Router();
 var mapModel = mongoose.model('mapPoint');
-var jwt = require('jsonwebtoken');
-var _ = require('lodash');
-var secret = 'a232fr45c66#$%%T5tv6NSJNSD12J@HU3SN';
 var responseGenerator = require('./../../libs/responseGenerator');
 var mapData = require('./../../libs/mapData');
 
