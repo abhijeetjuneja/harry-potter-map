@@ -1,0 +1,107 @@
+<!--Main Dashboard -->
+<div class=" container-fluid user-dashboard text-center">
+
+	<div class="row" style="margin-bottom: 3vh;">
+		<div class="offset-md-1 col-md-2 row " ng-if="dashboard.place">
+			<div class="col-md-12" style="padding-left: 0;padding-right: 0;">
+				<div class="dropdown">
+				  <button id="1" class="btn btn-outline-primary waves-effect dropdown-toggle" style="color: white!important;border-color: white!important;" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+				    <i class="fa fa-map-marker" ></i>&nbsp;&nbsp;Places
+				  </button>
+				  <div class="dropdown-menu" aria-labelledby="dropdownMenuButton" style="height:100px;overflow-y: auto;">
+				    <a class="dropdown-item" style="font-size: 12px;" href="#" ng-click="dashboard.search(places.lat,places.lon,10);dashboard.setPlaceForChars(places.lat,places.lon,places.name);" ng-repeat = "places in filtered = (dashboard.points) | filter : dashboard.filterPlace">{{places.name}}</a>
+				  </div>
+				</div>
+			</div>
+        </div>
+        <div class="offset-md-1 col-md-2 row" ng-if="dashboard.char">
+			<div class="col-md-12" style="padding-left: 0;padding-right: 0;">
+				<div class="dropdown">
+				  <button class="btn btn-outline-primary waves-effect dropdown-toggle" style="color: white!important;border-color: white!important;" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+				    Characters
+				  </button>
+				  <div class="dropdown-menu" aria-labelledby="dropdownMenuButton" style="height:100px;overflow-y: auto;">
+				    <a class="dropdown-item" style="font-size: 12px;" href="#" ng-click="dashboard.search(characters.lat,characters.lon,19);" ng-repeat = "characters in filtered = (dashboard.points) | filter : dashboard.filterChar">{{characters.name}}</a>
+				  </div>
+				</div>
+			</div>
+        </div>
+        <div class="col-md-1 row" ng-if="dashboard.char">
+			<div class="col-md-12" style="padding-left: 0;padding-right: 0;">
+				<div class="dropdown">
+				  <button class="btn btn-outline-primary waves-effect dropdown-toggle" style="color: white!important;border-color: white!important;" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+				    Events
+				  </button>
+				  <div class="dropdown-menu" aria-labelledby="dropdownMenuButton" style="height:100px;overflow-y: auto;">
+				    <a class="dropdown-item" style="font-size: 12px;" href="#" ng-click="dashboard.search(events.lat,events.lon,22);" ng-repeat = "events in filtered = (dashboard.points) | filter : dashboard.filterEvent">{{events.name}}</a>
+				  </div>
+				</div>
+			</div>	
+        </div>
+        <div class="offset-md-1 col-md-2">
+        	<a href="/marker/create"><button id="2" class="btn btn-outline-primary waves-effect" style="color: white!important;border-color: white!important;"><i class="fa fa-plus" aria-hidden="true"></i>&nbsp;&nbsp;Add</button></a>
+        </div>
+	</div>
+
+    <div class="row">
+    	<div class="col-md-1 wow animated fadeIn" data-wow-delay="0.5s">
+        	<div class="vertical-menu">
+        		<div style="padding-top: 5px;padding-bottom: 5px;border-bottom: 2px solid white;">
+        			<p style="margin-bottom: 0;">Icons</p>
+        		</div>
+			  <a href="#" data-toggle="popover" title="Characters" data-content="Some content inside the popover"><img id="3" src="../images/character.png" style="height: 20px;width:20px;"></a>
+			  <a href="#" data-toggle="popover" title="Places" data-content="Some content inside the popover"><i id="4" class="fa fa-map-marker" aria-hidden="true"></i></a>
+			  <a href="#" data-toggle="popover" title="Events in Philosopher's  Stone" data-content="Some content inside the popover"><img id="5" src="../images/stone.png" style="height: 20px;width:20px;"></a>
+			  <a href="#" data-toggle="popover" title="Events in Chamber of Secrets" data-content="Some content inside the popover"><img id="6" src="../images/chamber.png" style="height: 20px;width:20px;"></a>
+			  <a href="#" data-toggle="popover" title="Events in Prizoner of Azkaban" data-content="Some content inside the popover"><img id="7" src="../images/azkaban.png" style="height: 20px;width:20px;"></a>
+			  <a href="#" data-toggle="popover" title="Events in Goblet of Fire" data-content="Some content inside the popover"><img id="8" src="../images/goblet.png" style="height: 20px;width:20px;"></a>
+			  <a href="#" data-toggle="popover" title="Events in Order of Phoenix" data-content="Some content inside the popover"><img id="9" src="../images/phoenix.png" style="height: 20px;width:20px;"></a>
+			  <a href="#" data-toggle="popover" title="Events in Half-Blood Prince" data-content="Some content inside the popover"><img id="10" src="../images/6.png" style="height: 20px;width:20px;"></a>
+			  <a href="#" data-toggle="popover" title="Events in Deathly Hallows" data-content="Some content inside the popover"><img id="11" src="../images/hallows.png" style="height: 20px;width:20px;"></a>
+			</div>  	
+        </div>
+
+    	<div class="col-md-5 row">
+    		<div class="col-md-12 wow animated fadeIn" data-wow-delay="0.5s" id="map">
+        	</div>
+    	</div>
+    	
+        <div class="col-md-1">
+        	<div class="vertical-menu wow animated fadeIn" data-wow-delay="0.5s">
+        		<div style="padding-top: 5px;padding-bottom: 5px;border-bottom: 2px solid white;">
+        			<p style="margin-bottom: 0;">Controls</p>
+        		</div>
+			  <a href="#" ng-click="dashboard.setView(55.378051,-3.435973,3);" data-toggle="popover" title="Jump to Wizarding World" data-content="Some content inside the popover"><i id="12" class="fa fa-magic" aria-hidden="true"></i></a>
+			  <a href="#" ng-click="dashboard.setView(56.598437,-4.218750,16,5);" data-toggle="popover" title="Find characters and Events in the Map" data-content="Some content inside the popover"><i id="13" class="fa fa-graduation-cap" aria-hidden="true"></i></a>
+			  <a href="#" ng-click="dashboard.setView(55.378051,-3.435973,4);" data-toggle="popover" title="Find places in the Map" data-content="Some content inside the popover"><i id="14" class="fa fa-map-marker" aria-hidden="true"></i></a>
+			  <a href="#" ng-click="dashboard.move('up');" data-toggle="popover" title="Move up" data-content="Some content inside the popover"><i id="15" class="fa fa-arrow-up" aria-hidden="true"></i></a>
+			  <a href="#" ng-click="dashboard.move('down');" data-toggle="popover" title="Move down" data-content="Some content inside the popover"><i id="16" class="fa fa-arrow-down" aria-hidden="true"></i></a>
+			  <a href="#" ng-click="dashboard.move('right');" data-toggle="popover" title="Move right" data-content="Some content inside the popover"><i id="17" class="fa fa-arrow-right" aria-hidden="true"></i></a>
+			  <a href="#" ng-click="dashboard.move('left');" data-toggle="popover" title="Move left" data-content="Some content inside the popover"><i id="18" class="fa fa-arrow-left" aria-hidden="true"></i></a>
+			</div>  	
+        </div>
+        <div class="offset-md-1 col-md-4 contents wow animated fadeIn" data-wow-delay="0.5s" id="content" style="border:2px solid white;">
+        	<div style="background-color: white;color:black;padding-top: 3px;padding-bottom: 3px;">
+        		<h4 id="19">Info</h4>
+        	</div>
+        	<div ng-if="dashboard.name == ''">
+				<br><br><br><h4> Hover over a place to show Information :( </h4>        		
+        	</div>
+        	<img src="{{dashboard.url}}" style="width:50%;padding-top:5px;padding-bottom:5px;padding-left: 20px;padding-right: 20px;" class="img-responsive" ng-if='dashboard.type != "event"'>
+        	
+        	<h4 ng-if='dashboard.name != ""' style="background-color: white;color:black;padding-top:5px;padding-bottom:5px;padding-left: 20px;padding-right: 20px;">
+        		{{dashboard.name}}
+        	</h4>
+        	<p ng-if='dashboard.name != ""' style="padding-top:5px;padding-bottom:5px;padding-left: 20px;padding-right: 20px;">
+        		{{dashboard.abt}}
+        	</p>
+        </div>
+        
+    </div>
+    
+            
+    
+</div> 
+
+
+

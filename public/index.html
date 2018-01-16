@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="test">
+
+<head>
+    <base href="/">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1,maximum-scale=1.0, user-scalable=0">
+
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" type="text/css" href="vendor/bootstrap/css/bootstrap.min.css" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="vendor/bootstrap/css/bootstrap-tour-standalone.min.css" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="vendor/mdbootstrap/css/mdb.min.css" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="vendor/toastr/build/toastr.min.css" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="vendor/font-awesome/css/font-awesome.min.css" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="vendor/animate/animate.css" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="vendor/leaflet/leaflet.css" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="vendor/mapbox/mapbox-gl.css" crossorigin="anonymous">
+
+    <link rel="stylesheet" type="text/css" href="css/style.css" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Open+Sans">
+
+</head>
+
+
+<body ng-controller="mainController as main">
+
+    <!--Navbar-->
+    <nav class="navbar navbar-expand-lg navbar-light white fixed-top scrolling-navbar">
+
+        <!-- Navbar brand -->
+        <a class="navbar-brand" href="/" style="color: black!important;"><strong>Hp World &nbsp;<i class="fa fa-bolt"></i></strong></a>
+
+        <!-- Collapse button -->
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+            aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
+
+        <!-- Collapsible content -->
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+
+            <!-- Links -->
+            <ul class="navbar-nav ml-auto ">
+                <li class="nav-item">
+                    <!-- Show if not logged in -->
+                    <a class="nav-link" href = "/marker/create" ><strong><i class="fa fa-plus-circle" aria-hidden="true"></i>Add location</strong></a>
+                </li>
+
+                <li class="nav-item">
+                    <!-- Show if logged in -->
+                    <a class="nav-link"  href="/dashboard" ><strong><i class="fa fa-table" aria-hidden="true"></i> Dashboard</strong></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link"  href="/relive" ><strong><i class="fa fa-play" aria-hidden="true"></i> The Story</strong></a>
+                    
+                </li>
+
+            </ul>
+        </div>
+        <!-- Collapsible content -->
+
+    </nav>
+    <!--/.Navbar-->
+
+    <main role="main" class="container-fluid main">
+
+      
+    <div ng-view="main1" autoscroll="true">
+    </div>
+  
+    <!-- Footer -->
+    <footer id="myFooter">
+        <div class="container-fluid">
+            <div class="row text-center">
+                <div class="col-sm-6 col-md-4 col-lg-4 col-xl-4 ">
+                    <h4 class="logo"><a href="#"> Hp World <i class="fa fa-bolt"></i></a></h4>
+                </div>
+                <div class="col-sm-6 col-md-2 col-lg-2 col-xl-2">
+                    <p><strong>Get started</strong></p>
+                    <ul>
+                        <li><a href="/"><p>Home</p></a></li>
+                        <li><a href="#features"><p>Features</p></a></li>
+                        <li><a href="#steps"><p>Why Hp World?</p></a></li>
+                    </ul>
+                </div>
+                <div class="col-sm-6 col-md-3 col-lg-3 col-xl-3">
+                    <p><strong>About Us</strong></p>
+                    <ul>
+                        <li><a href="#"><p>hpworld.com</p></a></li>
+                        <li><a href="#"><p>Developed By- Abhijeet Juneja</p></a></li>
+                    </ul>
+                </div>
+                <div class="col-sm-6 col-md-3 col-lg-3 col-xl-3">
+                    <div class="social-networks">
+                        <a href="https://www.linkedin.com/in/abhijeet-juneja-b7513ba1" class="twitter" target="_blank"><i class="fa fa-linkedin" ></i></a>
+                        <a href="https://www.facebook.com/abhijeet.juneja" class="facebook" target="_blank"><i class="fa fa-facebook"></i></a>
+                        <a href="https://www.github.com/abhijeetjuneja" class="google" target="_blank"><i class="fa fa-github"></i></a>
+                    </div>
+                    <button type="button" class="btn btn-default">Contact us</button>
+                </div>
+            </div>
+        </div>
+        <div class="footer-copyright">
+            <p> HpWorld ©2017 Abhijeet Juneja </p>
+        </div>
+    </footer>
+
+
+    
+
+    <script type="text/javascript" src="vendor/jquery/jquery-3.2.1.min.js"></script>
+    <script type="text/javascript" src="vendor/popper/popper.min.js"></script>
+    <script type="text/javascript" src="vendor/toastr/build/toastr.min.js"></script>
+    <script type="text/javascript" src="vendor/bootstrap/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="vendor/bootstrap/js/bootstrap-tour-standalone.min.js"></script>
+    <script type="text/javascript" src="vendor/mdbootstrap/js/mdb.min.js"></script>
+    <script type="text/javascript" src="vendor/mapbox/mapbox-gl.js"></script>
+    <script type="text/javascript" src="vendor/leaflet/leaflet.js"></script>
+    <script type="text/javascript" src="vendor/leaflet/leaflet-providers.js"></script>
+    <script type="text/javascript" src="vendor/angular-js/angular.min.js"></script>
+    <script type="text/javascript" src="vendor/angular-js/angular-animate.min.js"></script>
+    <script type="text/javascript" src="vendor/wow/wow.min.js"></script>
+    <script type="text/javascript" src="vendor/chart.js/Chart.js"></script>
+
+    <script>
+    new WOW().init();
+    </script>
+    <script type="text/javascript" src="vendor/angular-js/angular-route.min.js"></script>
+    <script type="text/javascript" src="angular/app.js"></script>
+    <script type="text/javascript" src="angular/services/mapServices.js"></script>
+    <script type="text/javascript" src="angular/directives/match-password.js"></script>
+    <script type="text/javascript" src="angular/filters/filter.js"></script>
+    <script type="text/javascript" src="angular/controllers/mainController.js"></script>
+    <script type="text/javascript" src="angular/controllers/mapController.js"></script>
+    <script type="text/javascript" src="angular/controllers/dashboardController.js"></script>
+    <script type="text/javascript" src="angular/controllers/reliveController.js"></script>
+    <script type="text/javascript" src="angular/routes.js"></script>
+
+</body>
+
+</html>

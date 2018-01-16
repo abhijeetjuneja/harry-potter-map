@@ -1,0 +1,131 @@
+<!-- Create a test Form -->
+
+<div class="container-fluid test-create">
+	<div class="row">
+		<div class="col-xs-12 col-lg-6 test-form wow animated zoomIn">
+		<form name="mapForm" ng-submit="map.createMarker(mapForm.$valid);" novalidate>
+		    <h4 class="h5 text-center mb-4">Marker Creation</h4>
+
+		    <div class="md-form" ng-class="{ 'success':(mapForm.name.$valid && !mapForm.name.$pristine), 'error':(!mapForm.name.$valid && !mapForm.name.$pristine) || (!mapForm.name.$valid && mapForm.$submitted)}">
+		        <i class="fa fa-user prefix grey-text"></i>
+		        <input type="text" id="orangeForm-name" class="form-control validate"  name="name" ng-model="map.mapData.name" required>
+		        <label for="orangeForm-name">Point name</label>
+
+		        <!-- Error message if not entered-->
+		        <p class="help-block" ng-show="((!mapForm.name.$pristine && mapForm.name.$error.required) || (mapForm.$submitted && mapForm.name.$error.required))">Please Point Name</p>
+		    </div>
+
+		    <div class="md-form" ng-class="{ 'success':(mapForm.icon.$valid && !mapForm.icon.$pristine), 'error':(!mapForm.icon.$valid && !mapForm.icon.$pristine) || (!mapForm.icon.$valid && mapForm.$submitted)}">
+		        <i class="fa fa-user prefix grey-text"></i>
+		        <input type="text" id="orangeForm-name" class="form-control validate"  name="icon" ng-model="map.mapData.icon" required>
+		        <label for="orangeForm-name">Icon Url</label>
+
+		        <!-- Error message if not entered-->
+		        <p class="help-block" ng-show="((!mapForm.icon.$pristine && mapForm.icon.$error.required) || (mapForm.$submitted && mapForm.icon.$error.required))">Please Enter Icon url</p>
+		    </div>
+
+		    <div class="md-form" ng-class="{ 'success':(mapForm.url.$valid && !mapForm.url.$pristine), 'error':(!mapForm.url.$valid && !mapForm.url.$pristine) || (!mapForm.url.$valid && mapForm.$submitted)}">
+		        <i class="fa fa-user prefix grey-text"></i>
+		        <input type="text" id="orangeForm-name" class="form-control validate"  name="url" ng-model="map.mapData.url" required>
+		        <label for="orangeForm-name">Image Url</label>
+
+		        <!-- Error message if not entered-->
+		        <p class="help-block" ng-show="((!mapForm.url.$pristine && mapForm.url.$error.required) || (mapForm.$submitted && mapForm.url.$error.required))">Please Enter image Url</p>
+		    </div>
+
+		    <div class="md-form" ng-class="{ 'success':(mapForm.lat.$valid && !mapForm.lat.$pristine), 'error':(!mapForm.lat.$valid && !mapForm.lat.$pristine) || (!mapForm.lat.$valid && mapForm.$submitted)}">
+		        <i class="fa fa-user prefix grey-text"></i>
+		        <input type="text" id="orangeForm-name" class="form-control validate"  name="lat" ng-model="map.mapData.lat" required>
+		        <label for="orangeForm-name">Latitude</label>
+
+		        <!-- Error message if not entered-->
+		        <p class="help-block" ng-show="((!mapForm.lat.$pristine && mapForm.lat.$error.required) || (mapForm.$submitted && mapForm.lat.$error.required))">Latitude</p>
+		    </div>
+
+		    <div class="md-form" ng-class="{ 'success':(mapForm.lon.$valid && !mapForm.lon.$pristine), 'error':(!mapForm.lon.$valid && !mapForm.lon.$pristine) || (!mapForm.lon.$valid && mapForm.$submitted)}">
+		        <i class="fa fa-user prefix grey-text"></i>
+		        <input type="text" id="orangeForm-name" class="form-control validate"  name="lon" ng-model="map.mapData.lon" required>
+		        <label for="orangeForm-name">Longitude</label>
+
+		        <!-- Error message if not entered-->
+		        <p class="help-block" ng-show="((!mapForm.lon.$pristine && mapForm.lon.$error.required) || (mapForm.$submitted && mapForm.lon.$error.required))">Longitude</p>
+		    </div>
+
+		    <br>
+
+		    <div class="form-group" ng-class="{ 'success':(mapForm.type.$valid && !mapForm.type.$pristine), 'error':(!mapForm.type.$valid && !mapForm.type.$pristine) || (!mapForm.type.$valid && mapForm.$submitted)}">
+
+		    	<i class="fa fa-user fa-2x prefix grey-text" style="padding-right: 1.5rem;"></i><label for="type" class="grey-text">Type</label>
+		        <select class="form-control  validate test-select" id="type" name="type"  ng-model="map.mapData.type" required>
+			        <option value="place">Place</option>
+			        <option value="character">Character</option>
+			        <option value="event">Event</option>
+				</select>
+
+				<!-- Error message if not entered-->
+				<p class="help-block" ng-show="((!mapForm.type.$pristine && mapForm.type.$error.required) || (mapForm.$submitted && mapForm.type.$error.required))">* Please Enter type of Location</p>
+				
+		    </div>
+
+		    <br>
+
+		    <div class="md-form" ng-class="{ 'success':(mapForm.associatedPlace.$valid && !mapForm.associatedPlace.$pristine), 'error':(!mapForm.associatedPlace.$valid && !mapForm.associatedPlace.$pristine) || (!mapForm.associatedPlace.$valid && mapForm.$submitted)}">
+
+		    	<i class="fa fa-user prefix grey-text"></i>
+		        <input type="text" id="orangeForm-name" class="form-control validate"  name="associatedPlace" ng-model="map.mapData.associatedPlace" required>
+		        <label for="orangeForm-name">Associated Place</label>
+
+				<!-- Error message if not entered-->
+				<p class="help-block" ng-show="((!mapForm.associatedPlace.$pristine && mapForm.associatedPlace.$error.required) || (mapForm.$submitted && mapForm.associatedPlace.$error.required))">* Please Enter associated place of Location</p>
+				
+		    </div>
+
+		    <br>
+
+		    
+		    <div class="md-form" ng-class="{ 'success':(mapForm.abt.$valid && !mapForm.abt.$pristine), 'error':(!mapForm.abt.$valid && !mapForm.abt.$pristine) || (!mapForm.abt.$valid && mapForm.$submitted)}">
+		        <i class="fa fa-lock prefix grey-text"></i>
+		        <input type="text" id="orangeForm-pass" class="form-control validate" name="abt" ng-model="map.mapData.abt" required>
+		        <label for="orangeForm-pass">Description</label>
+
+		        <!-- Error message if not entered-->
+		        <p class="help-block" ng-show="((!mapForm.abt.$pristine && mapForm.abt.$error.required) || (mapForm.$submitted && mapForm.abt.$error.required))">* Please Enter your location Description</p>
+		    </div>
+
+
+		    <div class="text-center">
+		        <button class="btn btn-deep-orange" type="submit">Create Marker</button>
+		    </div>
+
+
+		</form>
+
+		<br>
+
+		<div class = "row show-hide-message col-sm-12" ng-show="map.successMessage">
+
+			<!-- Success message-->
+			<div class="alert alert-success">{{map.successMessage}}</div>
+		</div>
+
+		<br>
+
+		<div class = "row show-hide-message col-sm-12" ng-show="map.errorMessage">
+
+			<!-- Error message-->
+			<div class="alert alert-danger">{{map.errorMessage}}</div>
+		</div>
+
+	<br>
+
+	</div>
+
+</div>
+</div>
+
+
+
+
+
+
+
