@@ -43,6 +43,7 @@ app.controller('reliveController',['$http','$location','$timeout','$scope','$q',
     var aud = document.getElementById("audio");
     aud.autoplay = true;
     aud.volume = 0.5;
+    aud.loop = true;
     aud.onended = function() {
         aud.play();
     };
