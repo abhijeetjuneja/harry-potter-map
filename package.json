@@ -10,7 +10,7 @@
     "bcrypt-nodejs": "latest",
     "body-parser": "~1.9.2",
     "express": "~4.9.8",
-    "mongoose": "~4.2.4",
+    "mongoose": "5.10.11",
     "mongoose-title-case": "latest",
     "mongoose-validator":"latest",
     "morgan": "~1.5.0",

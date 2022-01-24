@@ -37,7 +37,7 @@ app.use(function(req,res,next){
 });
 
 
-mongoose.connect("mongodb://abcd:abcd@ds157097.mlab.com:57097/harry-potter");
+mongoose.connect("mongodb+srv://abcd:abcd@cluster0.qmo38.mongodb.net/", {dbName: "harry-potter"});
 
 var db = mongoose.connection;
 db.on('error', console.error.bind(console, '#MongoDB - connection error'));

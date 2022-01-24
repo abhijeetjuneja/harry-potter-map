@@ -33,11 +33,11 @@ app.controller('reliveController',['$http','$location','$timeout','$scope','$q',
     var map = L.map('map1').setView([55.378051, -3.435973], 2);
     
 
-    L.tileLayer('https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token={accessToken}', {
+    L.tileLayer('https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_token={accessToken}', {
         attribution: 'Map data &copy; <a href="http://openstreetmap.org">OpenStreetMap</a> contributors, <a href="http://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, Imagery © <a href="http://mapbox.com">Mapbox</a>',
         maxZoom: 28,
-        id: 'mapbox.dark',
-        accessToken: 'pk.eyJ1IjoiYWJoaWplZXQtanVuZWphIiwiYSI6ImNqYzZpM2pqYjBxdmsyd21xbThnc3h2bnQifQ.gAQs9p7K87AMP871d_6TWg'
+        id: 'mapbox/dark-v10',
+        accessToken: 'pk.eyJ1IjoiYWJoaWplZXQtanVuZWphIiwiYSI6ImNreXI3aDlxdzBxeWUyb21tdnp0ZGV3enoifQ.wgV0keQHdjX0_S319whPKw'
     }).addTo(map);
 
     var aud = document.getElementById("audio");
